@@ -1,6 +1,6 @@
 {
   "name": "@antelopejs/interface-email",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "AntelopeJS interface for email sending with support for templates, batch, and attachments",
   "keywords": [
     "antelopejs",
