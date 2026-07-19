@@ -69,4 +69,4 @@ Also declare `"antelopeJs": { "implements": ["@antelopejs/interface-email"] }` i
 
 ## Deeper reference
 
-See the shipped `dist/index.d.ts` for the full field-by-field contract, and the repo's `docs/` on GitHub (AntelopeJS/interface-email — Introduction, Sending Emails, Attachments) for prose guides — do not restate them here.
+See the shipped `dist/index.d.ts` for the full field-by-field contract, and this package's `docs/` chapters — Introduction, Sending Emails, Attachments — for prose guides. Do not restate them here.
