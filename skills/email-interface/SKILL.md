@@ -26,11 +26,11 @@ Add `@antelopejs/interface-email` to the module's `dependencies`, then call the 
 import { Send } from "@antelopejs/interface-email";
 
 const response = await Send({
-  to: { email: "user@example.com", name: "User" },
-  subject: "Welcome aboard",
-  html: "<h1>Welcome!</h1>",
-  text: "Welcome!",
-  attachments: [{ filename: "terms.pdf", contentType: "application/pdf", path: "/data/terms.pdf" }],
+  to: { email: "marisol.vega@lakeside-library.example", name: "Marisol Vega" },
+  subject: "Your loan is due back Friday",
+  html: "<h1>Return reminder</h1>",
+  text: "Return reminder",
+  attachments: [{ filename: "loan-receipt.pdf", contentType: "application/pdf", path: "/data/loan-receipt.pdf" }],
 });
 if (!response.success) {
   // response.error: { code, message, field?, retryable? }
