@@ -1,6 +1,5 @@
 # Changelog
 
-
 ## v0.0.5
 
 [compare changes](https://github.com/AntelopeJS/interface-email/compare/v0.0.4...v0.0.5)
@@ -37,7 +36,6 @@
 
 ## v0.0.2
 
-
 ### 🏡 Chore
 
 - Initial commit ([1eb1f9f](https://github.com/AntelopeJS/interface-email/commit/1eb1f9f))
@@ -46,4 +44,3 @@
 ### ❤️ Contributors
 
 - Antony Rizzitelli <upd4ting@gmail.com>
-
