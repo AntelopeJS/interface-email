@@ -14,8 +14,21 @@ Provider-agnostic email sending: consumers call four `InterfaceFunction` proxy p
 The package has a single root export:
 
 ```ts
-import { Send, SendBatch, SendTemplate, GetCapabilities } from "@antelopejs/interface-email";
-import type { EmailParams, TemplateEmailParams, BatchEmailParams, EmailResponse, BatchEmailResponse, Attachment, ProviderCapabilities } from "@antelopejs/interface-email";
+import {
+  Send,
+  SendBatch,
+  SendTemplate,
+  GetCapabilities,
+} from "@antelopejs/interface-email";
+import type {
+  EmailParams,
+  TemplateEmailParams,
+  BatchEmailParams,
+  EmailResponse,
+  BatchEmailResponse,
+  Attachment,
+  ProviderCapabilities,
+} from "@antelopejs/interface-email";
 ```
 
 ## Consuming
@@ -30,7 +43,13 @@ const response = await Send({
   subject: "Your loan is due back Friday",
   html: "<h1>Return reminder</h1>",
   text: "Return reminder",
-  attachments: [{ filename: "loan-receipt.pdf", contentType: "application/pdf", path: "/data/loan-receipt.pdf" }],
+  attachments: [
+    {
+      filename: "loan-receipt.pdf",
+      contentType: "application/pdf",
+      path: "/data/loan-receipt.pdf",
+    },
+  ],
 });
 if (!response.success) {
   // response.error: { code, message, field?, retryable? }
@@ -49,9 +68,28 @@ import * as EmailInterface from "@antelopejs/interface-email";
 
 ImplementInterface(EmailInterface, {
   Send: async (params) => ({ success: true, status: "sent", messageId: "..." }),
-  SendBatch: async (params) => ({ success: true, total: 0, successful: 0, failed: 0, responses: [] }),
+  SendBatch: async (params) => ({
+    success: true,
+    total: 0,
+    successful: 0,
+    failed: 0,
+    responses: [],
+  }),
   SendTemplate: async (params) => ({ success: true, status: "sent" }),
-  GetCapabilities: async () => ({ name: "my-provider", features: { batch: true, templates: false, scheduling: false, openTracking: false, clickTracking: false, inlineAttachments: true, tags: false, metadata: false, priority: true } }),
+  GetCapabilities: async () => ({
+    name: "my-provider",
+    features: {
+      batch: true,
+      templates: false,
+      scheduling: false,
+      openTracking: false,
+      clickTracking: false,
+      inlineAttachments: true,
+      tags: false,
+      metadata: false,
+      priority: true,
+    },
+  }),
 });
 ```
 
@@ -64,7 +102,7 @@ Also declare `"antelopeJs": { "implements": ["@antelopejs/interface-email"] }` i
 - Feature support varies by provider — gate `schedule`, `tracking`, `tags`, `metadata`, `priority` and templates on `(await GetCapabilities()).features` before relying on them.
 - `EmailParams` requires only `to` and `subject`; provide at least one of `text` / `html` (both for client compatibility). `from` falls back to the provider default.
 - `Attachment` is a union with exactly one source field: `content: Buffer`, `content` + `encoding: "base64"`, `path`, or `url`. Inline images need `cid` (referenced as `cid:yourCid` in HTML) and `inline: true`.
-- Batch: `continueOnError` defaults to `true`; `BatchEmailResponse.success` is `true` only if *all* messages succeeded — correlate individual results via `batchId` or `index`.
+- Batch: `continueOnError` defaults to `true`; `BatchEmailResponse.success` is `true` only if _all_ messages succeeded — correlate individual results via `batchId` or `index`.
 - `EmailStatus` includes `"queued"` and `"scheduled"` — a successful response does not mean delivered.
 
 ## Deeper reference
