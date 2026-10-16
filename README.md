@@ -69,7 +69,7 @@ export async function sendWelcome(address: string) {
 
 | Package                      | Range            |
 | ---------------------------- | ---------------- |
-| `@antelopejs/interface-core` | `>=0.0.3 <1.0.0` |
+| `@antelopejs/interface-core` | `>=0.2.4 <1.0.0` |
 
 This is the peer requirement in `package.json`. The package does not declare an
 `@antelopejs/core` peer range; check the implementing module's requirements too.
