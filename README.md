@@ -4,7 +4,7 @@
 <a href="https://www.npmjs.com/package/@antelopejs/interface-email"><img alt="npm" src="https://img.shields.io/npm/v/@antelopejs/interface-email?style=for-the-badge&labelColor=000000&color=000000"></a>
 <a href="./LICENSE"><img alt="License" src="https://img.shields.io/npm/l/@antelopejs/interface-email?style=for-the-badge&labelColor=000000&color=000000"></a>
 <a href="https://discord.gg/sjK28QHrA7"><img alt="Discord" src="https://img.shields.io/badge/Discord-18181B?logo=discord&style=for-the-badge&color=000000"></a>
-<a href="https://github.com/AntelopeJS/interface-email/tree/main/docs"><img alt="Docs" src="https://img.shields.io/badge/Docs-18181B?style=for-the-badge&color=000000"></a>
+<a href="./docs/1.introduction.md"><img alt="Docs" src="https://img.shields.io/badge/Docs-18181B?style=for-the-badge&color=000000"></a>
 </div>
 
 The AntelopeJS contract for sending email: one API for single, batch and template messages, whatever provider delivers them.
@@ -15,7 +15,7 @@ The AntelopeJS contract for sending email: one API for single, batch and templat
 - `SendBatch` sends several messages in one call, with shared defaults.
 - `SendTemplate` renders a provider template or an inline template with variables.
 - `GetCapabilities` reports what the provider supports, such as scheduling or tracking.
-- Every call returns a typed response with a status, a provider message ID and error details.
+- `Send` and `SendTemplate` return a status, an optional provider message ID and optional error details. `SendBatch` returns totals and individual message results; `GetCapabilities` returns provider features and limits, not delivery results.
 
 ## Implementations
 
@@ -59,16 +59,20 @@ export async function sendWelcome(address: string) {
 
 ## Documentation
 
-- [Introduction](https://github.com/AntelopeJS/interface-email/blob/main/docs/1.introduction.md)
-- [Sending emails](https://github.com/AntelopeJS/interface-email/blob/main/docs/2.sending-emails.md)
-- [Attachments](https://github.com/AntelopeJS/interface-email/blob/main/docs/3.attachments.md)
+- [Introduction](./docs/1.introduction.md)
+- [Sending emails](./docs/2.sending-emails.md)
+- [Attachments](./docs/3.attachments.md)
 
 ## Compatibility
 
-| Package                             | Range            |
-| ----------------------------------- | ---------------- |
-| `@antelopejs/interface-core` (peer) | `>=0.0.3 <1.0.0` |
-| `@antelopejs/core`                  | `1.x`            |
+<!-- docs-compat: ./package.json#peerDependencies -->
+
+| Package                      | Range            |
+| ---------------------------- | ---------------- |
+| `@antelopejs/interface-core` | `>=0.0.3 <1.0.0` |
+
+This is the peer requirement in `package.json`. The package does not declare an
+`@antelopejs/core` peer range; check the implementing module's requirements too.
 
 ## Contributing
 
