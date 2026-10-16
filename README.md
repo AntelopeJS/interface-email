@@ -1,28 +1,85 @@
-# Interface Email
+# @antelopejs/interface-email
 
 <div align="center">
-<a href="https://www.npmjs.com/package/@antelopejs/interface-email"><img src="https://img.shields.io/npm/v/@antelopejs/interface-email?style=for-the-badge&labelColor=000000&color=000000" alt="npm"></a>
-<a href="./LICENSE"><img alt="License" src="https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=for-the-badge&labelColor=000000"></a>
-<a href="https://discord.gg/sjK28QHrA7"><img src="https://img.shields.io/badge/Discord-18181B?logo=discord&style=for-the-badge&color=000000" alt="Discord"></a>
-<a href="./docs/1.introduction.md"><img src="https://img.shields.io/badge/Docs-18181B?style=for-the-badge&color=000000" alt="Documentation"></a>
+<a href="https://www.npmjs.com/package/@antelopejs/interface-email"><img alt="npm" src="https://img.shields.io/npm/v/@antelopejs/interface-email?style=for-the-badge&labelColor=000000&color=000000"></a>
+<a href="./LICENSE"><img alt="License" src="https://img.shields.io/npm/l/@antelopejs/interface-email?style=for-the-badge&labelColor=000000&color=000000"></a>
+<a href="https://discord.gg/sjK28QHrA7"><img alt="Discord" src="https://img.shields.io/badge/Discord-18181B?logo=discord&style=for-the-badge&color=000000"></a>
+<a href="https://github.com/AntelopeJS/interface-email/tree/main/docs"><img alt="Docs" src="https://img.shields.io/badge/Docs-18181B?style=for-the-badge&color=000000"></a>
 </div>
 
-A standardized email interface for AntelopeJS that provides a unified API for sending emails, batch sending, template rendering, and attachment handling. The interface abstracts away provider-specific details, allowing you to switch email providers without changing application code.
+The AntelopeJS contract for sending email: one API for single, batch and template messages, whatever provider delivers them.
 
-## Installation
+## What it offers
+
+- `Send` sends one message with text or HTML, recipients, threading headers and attachments.
+- `SendBatch` sends several messages in one call, with shared defaults.
+- `SendTemplate` renders a provider template or an inline template with variables.
+- `GetCapabilities` reports what the provider supports, such as scheduling or tracking.
+- Every call returns a typed response with a status, a provider message ID and error details.
+
+## Implementations
+
+| Module                                                               | Notes                   |
+| -------------------------------------------------------------------- | ----------------------- |
+| [`@antelopejs/nodemailer`](https://github.com/AntelopeJS/nodemailer) | SMTP through Nodemailer |
+
+## Install
+
+Add the interface to the module that sends email:
 
 ```bash
-npm install @antelopejs/interface-email
+pnpm add @antelopejs/interface-email
+```
+
+Then add an implementation to the project:
+
+```bash
+ajs project modules add @antelopejs/nodemailer
+```
+
+## Quick start
+
+```ts
+import { Send } from "@antelopejs/interface-email";
+
+export async function sendWelcome(address: string) {
+  const response = await Send({
+    to: address,
+    subject: "Welcome aboard",
+    html: "<p>Thanks for joining.</p>",
+    text: "Thanks for joining.",
+  });
+
+  if (!response.success) {
+    throw new Error(response.error?.message);
+  }
+  return response.messageId;
+}
 ```
 
 ## Documentation
 
-Detailed documentation is available in the `docs` directory:
+- [Introduction](./docs/1.introduction.md)
+- [Sending emails](./docs/2.sending-emails.md)
+- [Attachments](./docs/3.attachments.md)
 
-- [Introduction](./docs/1.introduction.md) - Overview of the interface, email address types, and core concepts
-- [Sending Emails](./docs/2.sending-emails.md) - Email parameters, priority, tracking, scheduling, templates, and batch sending
-- [Attachments](./docs/3.attachments.md) - Attachment types, inline images, and usage examples
+## Compatibility
+
+| Package                             | Range            |
+| ----------------------------------- | ---------------- |
+| `@antelopejs/interface-core` (peer) | `>=0.0.3 <1.0.0` |
+| `@antelopejs/core`                  | `1.x`            |
+
+## Contributing
+
+Read [CONTRIBUTING.md](./CONTRIBUTING.md) before you open a pull request. The local checks are:
+
+```bash
+pnpm install
+pnpm lint
+pnpm build
+```
 
 ## License
 
-This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+[Apache-2.0](./LICENSE)
