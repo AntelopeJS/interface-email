@@ -1,13 +1,17 @@
 {
   "name": "@antelopejs/interface-email",
   "version": "0.0.5",
-  "description": "AntelopeJS interface for email sending with support for templates, batch, and attachments",
+  "description": "AntelopeJS interface for sending email: single, batch and template messages with attachments",
   "keywords": [
     "antelopejs",
     "email",
     "interface",
     "mailing"
   ],
+  "homepage": "https://github.com/AntelopeJS/interface-email#readme",
+  "bugs": {
+    "url": "https://github.com/AntelopeJS/interface-email/issues"
+  },
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
