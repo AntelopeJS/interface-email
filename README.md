@@ -59,9 +59,9 @@ export async function sendWelcome(address: string) {
 
 ## Documentation
 
-- [Introduction](./docs/1.introduction.md)
-- [Sending emails](./docs/2.sending-emails.md)
-- [Attachments](./docs/3.attachments.md)
+- [Introduction](https://github.com/AntelopeJS/interface-email/blob/main/docs/1.introduction.md)
+- [Sending emails](https://github.com/AntelopeJS/interface-email/blob/main/docs/2.sending-emails.md)
+- [Attachments](https://github.com/AntelopeJS/interface-email/blob/main/docs/3.attachments.md)
 
 ## Compatibility
 
