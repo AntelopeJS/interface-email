@@ -1,5 +1,33 @@
 # Changelog
 
+## v0.0.6
+
+[compare changes](https://github.com/AntelopeJS/interface-email/compare/v0.0.5...v0.0.6)
+
+### 📖 Documentation
+
+- Rewrite the README ([#12](https://github.com/AntelopeJS/interface-email/pull/12))
+- **agents:** Simplify repository guidance ([#13](https://github.com/AntelopeJS/interface-email/pull/13))
+- Clarify email response contracts and compatibility ([#14](https://github.com/AntelopeJS/interface-email/pull/14))
+
+### 🏡 Chore
+
+- Replace Biome with oxlint, oxfmt and Knip ([#5](https://github.com/AntelopeJS/interface-email/pull/5))
+- Align community files with the organization defaults ([#7](https://github.com/AntelopeJS/interface-email/pull/7))
+- Remove .git-blame-ignore-revs ([#8](https://github.com/AntelopeJS/interface-email/pull/8))
+
+### 🤖 CI
+
+- Standardize npm releases ([#4](https://github.com/AntelopeJS/interface-email/pull/4))
+- Use shared npm release workflow ([#6](https://github.com/AntelopeJS/interface-email/pull/6))
+- **release:** Release next from a dedicated branch and restore requireCommits ([#9](https://github.com/AntelopeJS/interface-email/pull/9))
+- **release:** Reference the shared release workflows through v1 ([#10](https://github.com/AntelopeJS/interface-email/pull/10))
+
+### ❤️ Contributors
+
+- Antony Rizzitelli <rizzitelli.antony@pm.me>
+- Thomas ([@Thomasims](http://github.com/Thomasims))
+
 ## v0.0.5
 
 [compare changes](https://github.com/AntelopeJS/interface-email/compare/v0.0.4...v0.0.5)
