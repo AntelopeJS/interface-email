@@ -1,6 +1,6 @@
 {
   "rules": {
-    "antelopejs/no-comments": 29,
+    "antelopejs/no-comments": 27,
     "anti-slop/no-unsafe-dictionary-type": 4
   },
   "oversizeFiles": {}

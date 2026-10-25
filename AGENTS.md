@@ -11,12 +11,12 @@ The AntelopeJS contract for sending email, published as `@antelopejs/interface-e
 ## Checks
 
 - The package has no runtime tests. `pnpm test` runs `pnpm run build`, which emits `dist` and its declarations; `pnpm run checks` runs it once.
-- CI also checks `README.md` and `docs/` with the shared documentation action (`docs-files` in `.github/workflows/ci.yml`). `pnpm run checks` does not run that check.
+- CI also checks `README.md` and `docs/` with the shared documentation action (`docs-files` in `.github/workflows/ci.yml`). `pnpm run checks` does not run that check. To run it locally, clone `AntelopeJS/tooling-configs` at the commit `ci-node.yml` pins, run `npm ci --prefix <clone>/actions/docs --omit=dev --ignore-scripts`, then from this repository `node <clone>/actions/docs/check.mjs --files $'README.md\ndocs'`.
 
 ## Shipped files
 
 - `docs/` and `skills/` ship in the npm package. `skills/` reaches users through `antelopeJs.skills`; when the interface changes, update `skills/email-interface/SKILL.md` and the matching page in `docs/`.
-- Releases run from the Release workflow (`workflow_dispatch`, channel `latest` from `main` or `next` from `next`). release-it writes `CHANGELOG.md` through changelogen.
+- The Release workflow runs release-it, which writes `CHANGELOG.md` through changelogen.
 
 <!-- antelopejs-guardrails:start -->
 <!-- Managed by @antelopejs/tooling-configs. `antelopejs-sync` rewrites everything between these markers; write repository-specific guidance outside them. -->
