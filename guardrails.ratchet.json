@@ -1,6 +1,0 @@
-{
-  "rules": {
-    "anti-slop/no-unsafe-dictionary-type": 4
-  },
-  "oversizeFiles": {}
-}

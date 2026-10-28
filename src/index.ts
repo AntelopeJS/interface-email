@@ -1,5 +1,17 @@
 import { InterfaceFunction } from "@antelopejs/interface-core";
 
+/** Any value that survives JSON serialization */
+export type JsonValue =
+  | string
+  | number
+  | boolean
+  | null
+  | JsonValue[]
+  | JsonObject;
+
+/** JSON object: string keys mapped to JSON values */
+export type JsonObject = { [key: string]: JsonValue };
+
 export interface EmailAddressObject {
   email: string;
   name?: string;
@@ -107,7 +119,7 @@ export interface EmailParams {
   schedule?: ScheduleOptions;
 
   /** Provider-specific options (use sparingly) */
-  providerOptions?: Record<string, unknown>;
+  providerOptions?: JsonObject;
 }
 
 /** Reference to a template hosted by the provider */
@@ -134,9 +146,9 @@ export interface TemplateEmailParams {
   /** Template to use */
   template: ProviderTemplate | InlineTemplate;
   /** Variables for template substitution */
-  variables?: Record<string, unknown>;
+  variables?: JsonObject;
   /** Per-recipient variables (keyed by email address) */
-  recipientVariables?: Record<string, Record<string, unknown>>;
+  recipientVariables?: Record<string, JsonObject>;
 
   from?: EmailAddress;
   replyTo?: EmailAddress | EmailAddress[];
@@ -150,7 +162,7 @@ export interface TemplateEmailParams {
   tags?: string[];
   metadata?: Record<string, string>;
   schedule?: ScheduleOptions;
-  providerOptions?: Record<string, unknown>;
+  providerOptions?: JsonObject;
 }
 
 /** Single message in a batch */

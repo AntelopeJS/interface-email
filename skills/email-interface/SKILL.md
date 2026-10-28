@@ -56,7 +56,7 @@ if (!response.success) {
 }
 ```
 
-`SendTemplate` takes `template: { id }` (provider-hosted) or `{ content, type }` (inline) plus `variables` / `recipientVariables`. `SendBatch` takes `{ messages, defaults?, continueOnError? }` and returns per-message results.
+`SendTemplate` takes `template: { id }` (provider-hosted) or `{ content, type }` (inline) plus `variables` / `recipientVariables`. These and `providerOptions` are typed `JsonObject` (exported with `JsonValue`): only strings, numbers, booleans, `null`, arrays and plain objects of them, so convert a `Date` or `Buffer` before passing it. `SendBatch` takes `{ messages, defaults?, continueOnError? }` and returns per-message results.
 
 ## Providing
 
