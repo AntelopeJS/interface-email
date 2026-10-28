@@ -1,9 +1,5 @@
 import { InterfaceFunction } from "@antelopejs/interface-core";
 
-// =============================================================================
-// EMAIL ADDRESS TYPES
-// =============================================================================
-
 export interface EmailAddressObject {
   email: string;
   name?: string;
@@ -11,10 +7,6 @@ export interface EmailAddressObject {
 
 /** Email address as string or object with optional display name */
 export type EmailAddress = string | EmailAddressObject;
-
-// =============================================================================
-// ATTACHMENT TYPES
-// =============================================================================
 
 export interface BaseAttachment {
   /** Filename shown to recipient */
@@ -50,10 +42,6 @@ export type Attachment =
   | PathAttachment
   | UrlAttachment;
 
-// =============================================================================
-// TRACKING & SCHEDULING OPTIONS
-// =============================================================================
-
 export interface TrackingOptions {
   /** Track when recipient opens the email */
   opens?: boolean;
@@ -71,10 +59,6 @@ export interface ScheduleOptions {
   /** IANA timezone (e.g., "Europe/Paris") */
   timezone?: string;
 }
-
-// =============================================================================
-// EMAIL PARAMS
-// =============================================================================
 
 export type EmailPriority = "high" | "normal" | "low";
 
@@ -126,10 +110,6 @@ export interface EmailParams {
   providerOptions?: Record<string, unknown>;
 }
 
-// =============================================================================
-// TEMPLATE TYPES
-// =============================================================================
-
 /** Reference to a template hosted by the provider */
 export interface ProviderTemplate {
   /** Template ID in provider's system */
@@ -173,10 +153,6 @@ export interface TemplateEmailParams {
   providerOptions?: Record<string, unknown>;
 }
 
-// =============================================================================
-// BATCH TYPES
-// =============================================================================
-
 /** Single message in a batch */
 export interface BatchEmailMessage extends EmailParams {
   /** Identifier to match with response */
@@ -192,10 +168,6 @@ export interface BatchEmailParams {
   /** Continue sending if a message fails (default: true) */
   continueOnError?: boolean;
 }
-
-// =============================================================================
-// RESPONSE TYPES
-// =============================================================================
 
 /** Email delivery status */
 export type EmailStatus =
@@ -254,10 +226,6 @@ export interface BatchEmailResponse {
   responses: BatchEmailMessageResponse[];
 }
 
-// =============================================================================
-// PROVIDER CAPABILITIES
-// =============================================================================
-
 /** Supported features of the email provider */
 export interface ProviderFeatures {
   batch: boolean;
@@ -288,10 +256,6 @@ export interface ProviderCapabilities {
   /** Supported features */
   features: ProviderFeatures;
 }
-
-// =============================================================================
-// INTERFACE FUNCTIONS
-// =============================================================================
 
 export type SendFunction = (params: EmailParams) => Promise<EmailResponse>;
 export type SendBatchFunction = (
