@@ -1,0 +1,13 @@
+diff --git a/src/index.ts b/src/index.ts
+index 1144499..d980400 100644
+--- a/src/index.ts
++++ b/src/index.ts
+@@ -270,7 +270,7 @@ export interface ProviderCapabilities {
+   /** Max recipients per email */
+   maxRecipients?: number;
+   /** Max messages per batch */
+-  maxBatchSize?: number;
++  maxBatchSize: number;
+   /** Max attachment size in bytes */
+   maxAttachmentSize?: number;
+   /** Max total email size in bytes */
