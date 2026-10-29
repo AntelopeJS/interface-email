@@ -1,6 +1,11 @@
 import { InterfaceFunction } from "@antelopejs/interface-core";
 
-/** Any value that survives JSON serialization */
+/**
+ * A value JSON can represent: a string, number, boolean, `null`, an array of
+ * JSON values, or a {@link JsonObject}. `Date`, `Buffer`, functions and class
+ * instances are not JSON values; convert them first (for example
+ * `date.toISOString()`).
+ */
 export type JsonValue =
   | string
   | number
@@ -9,8 +14,13 @@ export type JsonValue =
   | JsonValue[]
   | JsonObject;
 
-/** JSON object: string keys mapped to JSON values */
-export type JsonObject = { [key: string]: JsonValue };
+/**
+ * String keys mapped to JSON values. A key whose value is `undefined` is
+ * accepted so an optional field can be passed as is; `JSON.stringify` drops
+ * it. An object typed as an `interface` is not assignable (it has no index
+ * signature); declare it with a `type` alias or spread it into a literal.
+ */
+export type JsonObject = { [key: string]: JsonValue | undefined };
 
 export interface EmailAddressObject {
   email: string;
