@@ -1,5 +1,27 @@
 import { InterfaceFunction } from "@antelopejs/interface-core";
 
+/**
+ * A value JSON can represent: a string, number, boolean, `null`, an array of
+ * JSON values, or a {@link JsonObject}. `Date`, `Buffer`, functions and class
+ * instances are not JSON values; convert them first (for example
+ * `date.toISOString()`).
+ */
+export type JsonValue =
+  | string
+  | number
+  | boolean
+  | null
+  | JsonValue[]
+  | JsonObject;
+
+/**
+ * String keys mapped to JSON values. A key whose value is `undefined` is
+ * accepted so an optional field can be passed as is; `JSON.stringify` drops
+ * it. An object typed as an `interface` is not assignable (it has no index
+ * signature); declare it with a `type` alias or spread it into a literal.
+ */
+export type JsonObject = { [key: string]: JsonValue | undefined };
+
 export interface EmailAddressObject {
   email: string;
   name?: string;
@@ -107,7 +129,7 @@ export interface EmailParams {
   schedule?: ScheduleOptions;
 
   /** Provider-specific options (use sparingly) */
-  providerOptions?: Record<string, unknown>;
+  providerOptions?: JsonObject;
 }
 
 /** Reference to a template hosted by the provider */
@@ -134,9 +156,9 @@ export interface TemplateEmailParams {
   /** Template to use */
   template: ProviderTemplate | InlineTemplate;
   /** Variables for template substitution */
-  variables?: Record<string, unknown>;
+  variables?: JsonObject;
   /** Per-recipient variables (keyed by email address) */
-  recipientVariables?: Record<string, Record<string, unknown>>;
+  recipientVariables?: Record<string, JsonObject>;
 
   from?: EmailAddress;
   replyTo?: EmailAddress | EmailAddress[];
@@ -150,7 +172,7 @@ export interface TemplateEmailParams {
   tags?: string[];
   metadata?: Record<string, string>;
   schedule?: ScheduleOptions;
-  providerOptions?: Record<string, unknown>;
+  providerOptions?: JsonObject;
 }
 
 /** Single message in a batch */

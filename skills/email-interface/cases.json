@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "cases": [
+    {
+      "id": "email-interface-send-attachment",
+      "area": "framework",
+      "style": "clean",
+      "prompt": "In my AntelopeJS module, how do I send an HTML email with a PDF attached?",
+      "expect": {
+        "skills": ["email-interface"],
+        "acceptable": ["antelopejs", "ajs-consume-interface"],
+        "mustMention": ["Send", "attachments"]
+      }
+    },
+    {
+      "id": "email-interface-batch-casual",
+      "area": "framework",
+      "style": "casual",
+      "prompt": "need to fire off a bunch of emails at once from my module, which call do i use",
+      "expect": {
+        "skills": ["email-interface"],
+        "acceptable": ["antelopejs", "ajs-consume-interface"],
+        "mustMention": ["SendBatch"]
+      }
+    },
+    {
+      "id": "email-interface-template-variables",
+      "area": "framework",
+      "style": "clean",
+      "prompt": "I want to send a templated email with per-recipient values through the AntelopeJS email interface. What do I pass?",
+      "expect": {
+        "skills": ["email-interface"],
+        "acceptable": ["antelopejs", "ajs-consume-interface"],
+        "mustMention": ["SendTemplate", "recipientVariables"]
+      }
+    },
+    {
+      "id": "email-interface-dms-mailing-neighbour",
+      "area": "modules",
+      "style": "clean",
+      "prompt": "How do I ship email templates and template categories as code in a DMS module?",
+      "expect": {
+        "skills": ["dms-mailing"],
+        "acceptable": ["dms", "antelopejs"],
+        "avoid": ["email-interface"]
+      }
+    }
+  ]
+}
