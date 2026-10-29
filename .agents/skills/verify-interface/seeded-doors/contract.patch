@@ -1,0 +1,13 @@
+diff --git a/src/index.ts b/src/index.ts
+index 1144499..5a68997 100644
+--- a/src/index.ts
++++ b/src/index.ts
+@@ -314,7 +314,7 @@ export const Send = InterfaceFunction<SendFunction>();
+  * });
+  * ```
+  */
+-export const SendBatch = InterfaceFunction<SendBatchFunction>();
++export const SendBatch = InterfaceFunction<SendBatchFunction>("send-batch");
+ 
+ /**
+  * Send an email using a template
