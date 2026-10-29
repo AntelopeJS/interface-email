@@ -1,5 +1,39 @@
 # Changelog
 
+## v0.1.0
+
+[compare changes](https://github.com/AntelopeJS/interface-email/compare/v0.0.6...v0.1.0)
+
+### 🚀 Enhancements
+
+- **email:** ⚠️  Tighten the published contract ([#22](https://github.com/AntelopeJS/interface-email/pull/22))
+
+### 💅 Refactors
+
+- Clean the repo with the guardrail pack ([#20](https://github.com/AntelopeJS/interface-email/pull/20))
+
+### 📖 Documentation
+
+- Add task-based reading paths and contract diagrams ([#15](https://github.com/AntelopeJS/interface-email/pull/15))
+- Clarify learning paths and illustrate real outcomes ([#17](https://github.com/AntelopeJS/interface-email/pull/17))
+
+### 📦 Build
+
+- Adopt the AntelopeJS guardrail pack ([#18](https://github.com/AntelopeJS/interface-email/pull/18))
+- **deps:** Upgrade tooling-configs to 0.2.11 ([#21](https://github.com/AntelopeJS/interface-email/pull/21))
+
+### 🏡 Chore
+
+- Configure Renovate with the shared preset ([#19](https://github.com/AntelopeJS/interface-email/pull/19))
+
+#### ⚠️ Breaking Changes
+
+- **email:** ⚠️  Tighten the published contract ([#22](https://github.com/AntelopeJS/interface-email/pull/22))
+
+### ❤️ Contributors
+
+- Antony Rizzitelli ([@Upd4ting](http://github.com/Upd4ting))
+
 ## v0.0.6
 
 [compare changes](https://github.com/AntelopeJS/interface-email/compare/v0.0.5...v0.0.6)
