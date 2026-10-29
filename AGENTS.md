@@ -10,6 +10,7 @@ The AntelopeJS contract for sending email, published as `@antelopejs/interface-e
 
 ## Checks
 
+- `tests/json-object.types.ts` is a compile-time test of what `JsonObject` accepts and rejects. `tsconfig.json` (typecheck) includes `tests`; `tsconfig.build.json` (the `build` script) emits only `src`.
 - The package has no runtime tests. `pnpm test` runs `pnpm run build`, which emits `dist` and its declarations; `pnpm run checks` runs it once.
 - CI also checks `README.md` and `docs/` with the shared documentation action (`docs-files` in `.github/workflows/ci.yml`). `pnpm run checks` does not run that check. To run it locally, clone `AntelopeJS/tooling-configs` at the commit `ci-node.yml` pins, run `npm ci --prefix <clone>/actions/docs --omit=dev --ignore-scripts`, then from this repository `node <clone>/actions/docs/check.mjs --files $'README.md\ndocs'`.
 
