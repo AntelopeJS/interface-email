@@ -65,11 +65,13 @@ export async function sendWelcome(address: string) {
 
 ## Compatibility
 
-<!-- docs-compat: ./package.json#peerDependencies -->
+<!-- antelopejs-docs-compat:start -->
 
-| Package                      | Range            |
-| ---------------------------- | ---------------- |
-| `@antelopejs/interface-core` | `>=0.2.4 <1.0.0` |
+| Package                      | Supported        | Tested with |
+| ---------------------------- | ---------------- | ----------- |
+| `@antelopejs/interface-core` | `>=0.2.4 <1.0.0` | `0.2.4`     |
+
+<!-- antelopejs-docs-compat:end -->
 
 This is the peer requirement in `package.json`. The package does not declare an
 `@antelopejs/core` peer range; check the implementing module's requirements too.
