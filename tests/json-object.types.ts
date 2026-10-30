@@ -7,21 +7,21 @@ interface InterfaceTyped {
   name: string;
 }
 
-declare function assertType<Flag extends true>(): Flag;
-
-assertType<Accepts<JsonObject, { firstName?: string }>>();
-assertType<Accepts<JsonObject, { firstName: string | undefined }>>();
-assertType<
-  Accepts<JsonObject, { tags: string[]; nested: { count: number } }>
->();
-assertType<Accepts<TemplateEmailParams["variables"], { firstName?: string }>>();
-assertType<
-  Accepts<
-    TemplateEmailParams["recipientVariables"],
-    Record<string, { n?: number }>
-  >
->();
-assertType<Not<Accepts<JsonObject, { sentAt: Date }>>>();
-assertType<Not<Accepts<JsonObject, { attachment: Buffer }>>>();
-assertType<Not<Accepts<JsonObject, { render: () => string }>>>();
-assertType<Not<Accepts<JsonObject, InterfaceTyped>>>();
+true satisfies Accepts<JsonObject, { firstName?: string }>;
+true satisfies Accepts<JsonObject, { firstName: string | undefined }>;
+true satisfies Accepts<
+  JsonObject,
+  { tags: string[]; nested: { count: number } }
+>;
+true satisfies Accepts<
+  TemplateEmailParams["variables"],
+  { firstName?: string }
+>;
+true satisfies Accepts<
+  TemplateEmailParams["recipientVariables"],
+  Record<string, { n?: number }>
+>;
+true satisfies Not<Accepts<JsonObject, { sentAt: Date }>>;
+true satisfies Not<Accepts<JsonObject, { attachment: Buffer }>>;
+true satisfies Not<Accepts<JsonObject, { render: () => string }>>;
+true satisfies Not<Accepts<JsonObject, InterfaceTyped>>;
