@@ -1,0 +1,7 @@
+{
+  "pack": "0.2.17",
+  "rules": {
+    "typescript/no-unnecessary-type-parameters": 1
+  },
+  "oversizeFiles": {}
+}
