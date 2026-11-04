@@ -1,5 +1,30 @@
 # Changelog
 
+## v0.1.1
+
+[compare changes](https://github.com/AntelopeJS/interface-email/compare/v0.1.0...v0.1.1)
+
+### 🚀 Enhancements
+
+- **skills:** Add the verify-interface verification skill ([#23](https://github.com/AntelopeJS/interface-email/pull/23))
+
+### 📖 Documentation
+
+- **readme:** Use one Discord invite ([#27](https://github.com/AntelopeJS/interface-email/pull/27))
+- **github:** Send questions and ideas to Discord ([#28](https://github.com/AntelopeJS/interface-email/pull/28))
+
+### 📦 Build
+
+- **deps:** Bump @antelopejs/tooling-configs to 0.2.17 ([#24](https://github.com/AntelopeJS/interface-email/pull/24))
+
+### 🏡 Chore
+
+- Land the cleanup campaign on main ([#31](https://github.com/AntelopeJS/interface-email/pull/31))
+
+### ❤️ Contributors
+
+- Antony Rizzitelli ([@Upd4ting](http://github.com/Upd4ting))
+
 ## v0.1.0
 
 [compare changes](https://github.com/AntelopeJS/interface-email/compare/v0.0.6...v0.1.0)
