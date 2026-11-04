@@ -9,6 +9,8 @@
 
 The AntelopeJS contract for sending email: one API for single, batch and template messages, whatever provider delivers them.
 
+Part of [AntelopeJS](https://github.com/AntelopeJS/antelopejs). Used by [AntelopeJS DMS](https://github.com/AntelopeJS/dms), the open-source back office for your PostgreSQL, MongoDB or RethinkDB database.
+
 ## What it offers
 
 - `Send` sends one message with text or HTML, recipients, threading headers and attachments.
