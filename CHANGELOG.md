@@ -1,5 +1,40 @@
 # Changelog
 
+## v0.2.0
+
+[compare changes](https://github.com/AntelopeJS/interface-email/compare/v0.1.1...v0.2.0)
+
+### 🚀 Enhancements
+
+- Add providerTemplates to ProviderFeatures ([#39](https://github.com/AntelopeJS/interface-email/pull/39))
+
+### 🔥 Performance
+
+- **build:** Skip the lib check in build, typecheck keeps it ([#37](https://github.com/AntelopeJS/interface-email/pull/37))
+
+### 📖 Documentation
+
+- **readme:** Link the package to AntelopeJS and AntelopeJS DMS ([0fb81f4](https://github.com/AntelopeJS/interface-email/commit/0fb81f4))
+
+### 📦 Build
+
+- **deps:** Bump @antelopejs packages to the 2026-11-06 releases ([#36](https://github.com/AntelopeJS/interface-email/pull/36))
+- **deps:** Bump @antelopejs/tooling-configs to 0.4.0 ([#38](https://github.com/AntelopeJS/interface-email/pull/38))
+
+### 🏡 Chore
+
+- **verify:** Remove seeded runs from the verification skill ([#33](https://github.com/AntelopeJS/interface-email/pull/33))
+- **ci:** Remove the weekly mutation caller ([#34](https://github.com/AntelopeJS/interface-email/pull/34))
+
+### 🤖 CI
+
+- Call ci-node.yml@v1 ([#35](https://github.com/AntelopeJS/interface-email/pull/35))
+- **release:** Accept an exact release version ([#40](https://github.com/AntelopeJS/interface-email/pull/40))
+
+### ❤️ Contributors
+
+- Antony Rizzitelli ([@Upd4ting](http://github.com/Upd4ting))
+
 ## v0.1.1
 
 [compare changes](https://github.com/AntelopeJS/interface-email/compare/v0.1.0...v0.1.1)
