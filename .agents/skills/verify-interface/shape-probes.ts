@@ -84,6 +84,7 @@ export const CAPABILITIES_TYPES = `
 type _Features = Assert<Identical<Api.ProviderFeatures, {
   batch: boolean;
   templates: boolean;
+  providerTemplates: boolean;
   scheduling: boolean;
   openTracking: boolean;
   clickTracking: boolean;

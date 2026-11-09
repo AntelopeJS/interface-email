@@ -56,7 +56,7 @@ if (!response.success) {
 }
 ```
 
-`SendTemplate` takes `template: { id }` (provider-hosted) or `{ content, type }` (inline) plus `variables` / `recipientVariables`. These and `providerOptions` are typed `JsonObject` (exported with `JsonValue`): strings, numbers, booleans, `null`, arrays and objects of them, with `undefined` accepted as a key's value. Convert a `Date` or `Buffer` first; an object typed as an `interface` is rejected, so use a `type` alias or spread it into a literal. `SendBatch` takes `{ messages, defaults?, continueOnError? }` and returns per-message results.
+`SendTemplate` takes `template: { id }` (provider-hosted, gated on `features.providerTemplates`) or `{ content, type }` (inline, gated on `features.templates`) plus `variables` / `recipientVariables`. These and `providerOptions` are typed `JsonObject` (exported with `JsonValue`): strings, numbers, booleans, `null`, arrays and objects of them, with `undefined` accepted as a key's value. Convert a `Date` or `Buffer` first; an object typed as an `interface` is rejected, so use a `type` alias or spread it into a literal. `SendBatch` takes `{ messages, defaults?, continueOnError? }` and returns per-message results.
 
 ## Providing
 
@@ -81,6 +81,7 @@ ImplementInterface(EmailInterface, {
     features: {
       batch: true,
       templates: false,
+      providerTemplates: false,
       scheduling: false,
       openTracking: false,
       clickTracking: false,

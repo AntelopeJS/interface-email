@@ -251,7 +251,10 @@ export interface BatchEmailResponse {
 /** Supported features of the email provider */
 export interface ProviderFeatures {
   batch: boolean;
+  /** SendTemplate works for at least inline templates */
   templates: boolean;
+  /** SendTemplate accepts a ProviderTemplate (a template stored by the provider, named by id) */
+  providerTemplates: boolean;
   scheduling: boolean;
   openTracking: boolean;
   clickTracking: boolean;
