@@ -1,5 +1,27 @@
 # Changelog
 
+## v0.2.1
+
+[compare changes](https://github.com/AntelopeJS/interface-email/compare/v0.2.0...v0.2.1)
+
+### 📖 Documentation
+
+- **readme:** Adopt the AntelopeJS framework README style ([#43](https://github.com/AntelopeJS/interface-email/pull/43))
+
+### 📦 Build
+
+- **deps:** Bump @antelopejs/tooling-configs to 0.5.0 ([#41](https://github.com/AntelopeJS/interface-email/pull/41))
+- **deps:** Bump @antelopejs/tooling-configs to 0.5.1 ([#42](https://github.com/AntelopeJS/interface-email/pull/42))
+- **deps:** Cap AntelopeJS ranges and bump tooling-configs to 0.6 ([#45](https://github.com/AntelopeJS/interface-email/pull/45))
+
+### 🤖 CI
+
+- Run the check jobs on Windows beside Linux ([#44](https://github.com/AntelopeJS/interface-email/pull/44))
+
+### ❤️ Contributors
+
+- Antony Rizzitelli ([@Upd4ting](http://github.com/Upd4ting))
+
 ## v0.2.0
 
 [compare changes](https://github.com/AntelopeJS/interface-email/compare/v0.1.1...v0.2.0)
