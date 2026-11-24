@@ -49,7 +49,7 @@
     "sync": "antelopejs-sync",
     "sync:check": "antelopejs-sync --check",
     "typecheck": "tsc --noEmit",
-    "test": "pnpm run build",
+    "test": "pnpm run build && node --test tests/*.test.ts",
     "suppressions": "antelopejs-suppressions",
     "suppressions:update": "antelopejs-suppressions --update"
   },
