@@ -7,7 +7,7 @@ tags: [antelopejs, email, templates, batch, providers]
 
 # Email interface
 
-Provider-agnostic email sending: consumers call four `InterfaceFunction` proxy points (`Send`, `SendBatch`, `SendTemplate`, `GetCapabilities`); a provider module (SendGrid, Mailgun, SES, ...) attaches the implementation at runtime. Everything else in the package is pure TypeScript types — no runtime crossing, no consumer-side helpers.
+Provider-agnostic email sending: consumers call four `InterfaceFunction` proxy points (`Send`, `SendBatch`, `SendTemplate`, `GetCapabilities`); a provider module (SendGrid, Mailgun, SES, ...) attaches the implementation at runtime. Everything else in the package is pure TypeScript types — no runtime crossing, except the pure `renderInlineTemplate(content, variables)` helper that providers call to render an inline template.
 
 ## Imports
 

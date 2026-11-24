@@ -343,3 +343,5 @@ export const SendTemplate = InterfaceFunction<SendTemplateFunction>();
  * ```
  */
 export const GetCapabilities = InterfaceFunction<GetCapabilitiesFunction>();
+
+export { renderInlineTemplate } from "./render";
