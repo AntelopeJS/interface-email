@@ -1,5 +1,31 @@
 # Changelog
 
+## v0.2.2
+
+[compare changes](https://github.com/AntelopeJS/interface-email/compare/v0.2.1...v0.2.2)
+
+### 🚀 Enhancements
+
+- **render:** Export renderInlineTemplate for providers ([#54](https://github.com/AntelopeJS/interface-email/pull/54))
+
+### 📦 Build
+
+- Move to @antelopejs/tooling-configs 0.8 and the three-tier CI ([#47](https://github.com/AntelopeJS/interface-email/pull/47))
+
+### 🏡 Chore
+
+- **deps:** Update dependency oxlint-tsgolint to v7.0.2008 ([#53](https://github.com/AntelopeJS/interface-email/pull/53))
+
+### 🤖 CI
+
+- Roll out the trunk CI and the merge queue ([#48](https://github.com/AntelopeJS/interface-email/pull/48))
+- Re-sync the AntelopeJS pack for the release app ([#50](https://github.com/AntelopeJS/interface-email/pull/50))
+- Stop forwarding the retired RELEASE_GITHUB_TOKEN ([#51](https://github.com/AntelopeJS/interface-email/pull/51))
+
+### ❤️ Contributors
+
+- Antony Rizzitelli
+
 ## v0.2.1
 
 [compare changes](https://github.com/AntelopeJS/interface-email/compare/v0.2.0...v0.2.1)
